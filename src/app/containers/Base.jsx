@@ -15,7 +15,7 @@ const Base = ({ children, className }) => (
 
 Base.propTypes = {
   children: PropTypes.array,
-  className: PropTypes.string
+  className: PropTypes.string,
 };
 
 export default Base;

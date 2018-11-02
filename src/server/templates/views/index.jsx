@@ -6,9 +6,9 @@ import { createStore } from 'redux';
 import PropTypes from 'prop-types';
 
 import App from '../../../app/app';
-import reducers from "../../../app/reducers";
+import reducers from '../../../app/reducers';
 
-const Index = (props) => {
+const Index = props => {
   const store = createStore(reducers, props);
 
   return (
@@ -34,8 +34,8 @@ const Index = (props) => {
 Index.propTypes = {
   request: PropTypes.shape({
     url: PropTypes.string,
-    query: PropTypes.object
-  })
+    query: PropTypes.object,
+  }),
 };
 
 export default Index;

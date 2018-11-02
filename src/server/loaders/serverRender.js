@@ -1,12 +1,14 @@
 require('ignore-styles');
-require('babel-register')({ ignore: /\/(build|node_modules)\//, presets: ['es2015', 'react'] });
+require('babel-register')({
+  ignore: /\/(build|node_modules)\//,
+  presets: ['es2015', 'react'],
+});
 
 const keystone = require('keystone');
 const configureStore = require('../../app/store').default;
 
 module.exports = function universalLoader(request, response, next) {
-
-  if (request.path.includes(keystone.get('admin path'))){
+  if (request.path.includes(keystone.get('admin path'))) {
     return next();
   }
 
@@ -17,7 +19,7 @@ module.exports = function universalLoader(request, response, next) {
     store: store.getState(),
     request: {
       url: request.url,
-      query: request.query
-    }
+      query: request.query,
+    },
   });
 };

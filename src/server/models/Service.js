@@ -1,4 +1,3 @@
-
 var keystone = require('keystone');
 var Types = keystone.Field.Types;
 
@@ -8,18 +7,17 @@ var Service = new keystone.List('Service', {
   defaultSort: '-createdAt',
 });
 
-
 // Finally we are gonna add the fields for our Service
 Service.add({
   name: {
     type: String,
-    required: true
+    required: true,
   },
   description: {
     type: Types.Html,
     wysiwyg: true,
-    height: 150
-  }
+    height: 150,
+  },
 });
 
 Service.track = true;

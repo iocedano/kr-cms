@@ -21,9 +21,9 @@ export function fetchServices(data) {
 
 // This is a redux thunk that will fetch our model data
 export function fetch(url) {
-  return (dispatch) => {
+  return dispatch => {
     const request = axios.get(url);
-    request.then((response) => {
+    request.then(response => {
       dispatch(loading(false));
       dispatch(fetchServices(response.data.services));
     });

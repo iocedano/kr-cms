@@ -7,12 +7,19 @@ import thunk from 'redux-thunk';
 import reducers from './reducers/index';
 import Routes from './routes';
 
-const preloadedState = JSON.parse(document.getElementById('react-engine-props').text);
+const preloadedState = JSON.parse(
+  document.getElementById('react-engine-props').text
+);
 
-const store = createStore(reducers, preloadedState.store, applyMiddleware(thunk));
+const store = createStore(
+  reducers,
+  preloadedState.store,
+  applyMiddleware(thunk)
+);
 
 ReactDOM.render(
   <Provider store={store}>
-      <Routes />
+    <Routes />
   </Provider>,
-  document.querySelector('#root'));
+  document.querySelector('#root')
+);
